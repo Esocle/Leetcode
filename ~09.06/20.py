@@ -3,21 +3,20 @@ class Solution(object):
         branckets = {')':'(', '}':'{', ']':'['}
         stack = []
         for e in s:
-            if branckets.get(e) != None:
-                if len(stack) != 0:
-                    temp = stack.pop()
-                    if temp != branckets.get(e):
+            if e in branckets:
+                if stack:
+                    top_element = stack.pop()
+                    if top_element != branckets[e]:
                         return False
                 else:
                     return False
             else:
-                stack.append(e)          
-        if len(stack) == 0:
-            return True
-        else:
-            return False
+                stack.append(e)
+        
+        return True if len(stack) == 0 else False
+
 
 
 a = Solution()
-result = a.isValid("{}}")
+result = a.isValid("[")
 print(result)
