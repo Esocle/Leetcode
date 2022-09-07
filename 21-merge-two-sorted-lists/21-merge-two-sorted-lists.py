@@ -3,10 +3,9 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-    
 class Solution(object):
     def mergeTwoLists(self, list1, list2):
-        node = ListNode(0)
+        node = ListNode()
         cur = node
         while list1 and list2:
             if list1.val <= list2.val:
