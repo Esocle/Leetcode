@@ -10,5 +10,4 @@ class Solution(object):
             if nums[i] != val:
                 nums[count] = nums[i]
                 count += 1
-        
         return count
