@@ -5,13 +5,14 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
-        index = 0
-        for i in range(len(nums)):
-            if nums[i] == target:
-                index = i
+        left = 0
+        right = len(nums) - 1
+        while left <= right:
+            mid = (left+right) // 2
+            if nums[mid] == target:
+                return mid
+            elif nums[mid] < target:
+                left = mid + 1
             else:
-                if nums[i-1] < target and nums[i] > target:
-                    index = i
-        if index == 0: 
-            if target > nums[-1]: index = len(nums)
-        return index
+                right = mid - 1
+        return left
