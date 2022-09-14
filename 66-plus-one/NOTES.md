@@ -1,7 +1,7 @@
 # python map function
 
 * 숫자 list -> 문자열
-* 
+
 numbers = [10, 20, 30]
 ' '.join(map(str, numbers))
 
