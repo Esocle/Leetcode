@@ -3,7 +3,7 @@ class Solution:
         left = 0
         right = len(arr) - k
         while left < right:
-            mid = int((left + right) / 2)
+            mid = (left + right) // 2
             if (x - arr[mid]) > (arr[mid + k] - x):
                 left = mid + 1
             else:
